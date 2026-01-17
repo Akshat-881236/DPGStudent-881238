@@ -258,8 +258,8 @@ body{
 }
 
 .top-banner img{width:100%}
-.center{text-align:center;line-height:1.8;margin-top:20px}
-.mid-logo{text-align:center;margin:25px 0}
+.center{text-align:center;line-height:1.8;margin-top:20px; color: #000;}
+.mid-logo{text-align:center;margin:15px 0}
 .mid-logo img{width:160px}
 
 .box-row{
@@ -272,9 +272,9 @@ body{
   background:#fff;
   color:#000;
   padding:15px;
-  border:2px solid #ff7a00;
+  border:1px solid #f6f6f6;
 }
-.box.right{border-color:#5fa8ff}
+.box.right{border-color:#f6f6f6}
 
 .footer{
   margin:25px 20px;
@@ -295,7 +295,7 @@ body{
   font-weight:700;
   letter-spacing:4px;
   opacity:.06;
-  display:none;
+  display:block;
   pointer-events:none;
 }
 
@@ -350,7 +350,7 @@ body{
 <!-- ========== VIEW 2 ========= -->
 <div class="view" id="formView">
   <form class="form-card" id="dataForm">
-    <h2>Enter Assignment Details</h2>
+    <h2>Enter Following Details</h2>
 
     <input placeholder="Assignment No" id="assign">
     <input placeholder="Subject Name" id="subject">
@@ -384,10 +384,11 @@ body{
 <br>
   <div class="center">
     <p><b>ASSIGNMENT NO. → <span id="o_assign"></span></b></p>
+    <p><b>OF</b></p>
     <p><b id="o_subject"></b></p>
     <p><b id="o_code"></b></p>
-    <p><b>IN PARTIAL FULFILLMENT OF THE REQUIREMENT OF</b></p>
-    <p><b id="o_course"></b></p>
+    <p><b>IN PARTIAL FULFILLMENT OF THE REQUIREMENT OF</b> <b id="o_course"></b></p>
+    <p><b>SESSION : 2025 - 2026</b></p>
   </div>
 <br>
   <div class="mid-logo"><img src="/DPGStudent-881238/MDU_LOGO.jpg"></div>
@@ -414,13 +415,16 @@ body{
   </div>
 
   <div class="footer">
-    SUBMITTED ON <span id="o_date"></span><br>
+    SUBMITTED ON <span id="o_date"></span> , 
     MDU ROHTAK
   </div>
 </div>
 
 <div style="text-align:center;margin-top:20px">
   <input placeholder="Guest Code" id="guest">
+  <button class="btn alt" onclick="toggleWatermark()">
+    <i class="bi bi-shield-lock"></i> Watermark
+  </button>
   <button class="btn" onclick="window.print()">
     <i class="bi bi-printer"></i> Print
   </button>
@@ -455,6 +459,13 @@ dataForm.onsubmit=e=>{
   o("o_date",v("date"));
 
   show("frontView");
+};
+
+function toggleWatermark(){
+  if(guest.value==="GUEST123"){
+    watermark.style.display =
+      watermark.style.display==="none"?"block":"none";
+  }else alert("Invalid Guest Code");
 };
 </script>
 
