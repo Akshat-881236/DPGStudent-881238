@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DPG STM Front Page Generator | Akshat Network Hub</title>
+<title>DPG STM Latest Front Page Generator | Akshat Network Hub</title>
 
 <!-- SEO META -->
 <meta name="title" content="DPG STM Assignment Front Page Generator">
@@ -41,13 +41,12 @@
 <link rel="me" href="https://www.instagram.com/its_akshat_881236/">
 <link rel="me" href="https://akshat-881236.github.io/AkshatNetworkHub/">
 <link rel="me" href="https://chatgpt.com/g/g-69650dace81481918f8d3eeecb576469-akshat-network-hub">
-<link rel="canonical" title="Akshat Network Hub" href="https://akshat-881236.github.io/AkshatNetworkHub/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Akshat Prasad | Akshat Network Hub">
 <meta property="og:description" content="Developer & Founder of Akshat Network Hub">
 <meta property="og:url" content="https://akshat-881236.github.io/">
 <meta property="og:image" content="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png">
-
+<link rel="canonical" href="https://akshat-881236.github.io/DPGStudent-881238/DPG_Practical_Frontpage_Generator.htm">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Akshat Prasad">
 <meta name="twitter:description" content="Founder of Akshat Network Hub">
@@ -259,7 +258,7 @@ body{
 
 .top-banner img{width:100%}
 .center{text-align:center;line-height:1.8;margin-top:20px; color: #000;}
-.mid-logo{text-align:center;margin:25px 0}
+.mid-logo{text-align:center;margin:15px 0}
 .mid-logo img{width:160px}
 
 .box-row{
@@ -272,9 +271,9 @@ body{
   background:#fff;
   color:#000;
   padding:15px;
-  border:2px solid #f2f2f2;
+  border:1px solid #f6f6f6;
 }
-.box.right{border-color:#f2f2f2}
+.box.right{border-color:#f6f6f6}
 
 .footer{
   margin:25px 20px;
@@ -333,20 +332,18 @@ body{
 <script src="https://akshat-881236.github.io/TrackerJS/index.js"></script>
 <script src="https://akshat-881236.github.io/TrackerJS/akshat-add-nav.js"></script>
 </head>
-<body onload="alert('Welcome to Practical File Frontpage Generator - By Akshat Prasad')" onload="pushData()">
+<body onload="alert('Welcome to Assignment Frontpage Generator - By Akshat Prasad')" onload="pushData()">
 
 <!-- ========== VIEW 1 ========= -->
 <div class="view active" id="homeView">
     <img src="/DPGStudent-881238/dpglogo.jpg" alt="DPG Logo" width="200px" class="logo">
   <h1>DPG STM Front Page System</h1>
-  <p>Enter your Details and Generate Frontpage of Practical File and Print them to save as Pdf.</p>
+  <p>Enter your Details and Generate Frontpage of Practical and Print them to save as Pdf.</p>
   <div style="margin-top:30px">
     <button class="btn" onclick="show('formView')">
       <i class="bi bi-plus-circle"></i> Create Front Page
     </button>
   </div>
-  <p>(Valid for Programs run by DPG DEGREE COLLEGE under Autonomous
-Status w.e.f. 2025-26). Under this new right DPG degree college had make some changes in his Practical Frontpage Design. Go to the <a href=/DPGStudent-881238/DPG_Practical_Frontpage_Generator.htm>latest version</a> to print exact format wef 2025-2026.</p>
 </div>
 
 <!-- ========== VIEW 2 ========= -->
@@ -363,7 +360,7 @@ Status w.e.f. 2025-26). Under this new right DPG degree college had make some c
     <input placeholder="Teacher Name" id="teacher">
     <input placeholder="Designation" id="designation">
     <input placeholder="Department" id="dept">
-    <input type="date" id="date"><br>
+    <input type="date" id="date">
 
     <button class="btn" type="submit">
       <i class="bi bi-file-earmark-check"></i> Generate
@@ -381,18 +378,18 @@ Status w.e.f. 2025-26). Under this new right DPG degree college had make some c
 <div class="watermark" id="watermark"></div>
 
   <div class="top-banner"><img src="/DPGStudent-881238/DPGSTMLOGO.jpg"></div>
-<br>
   <div class="center">
     <p><b>A</b></p>
-    <p><b>PRACTICAL FILE OF</b></p>
+    <p><b>PRACTICAL FILE</b></p>
+    <p><b>OF</b></p>
     <p><b id="o_subject"></b></p>
     <p><b id="o_code"></b></p>
-    <p><b>IN PARTIAL FULFILLMENT OF THE REQUIREMENT OF</b> <b id="o_course"></b></p>
-    <p><b>SESSION : 2025-2026</b></p>
+    <p><b id="o_course"></b></p>
+    <p><b>(Valid for Programs run by DPG DEGREE COLLEGE under Autonomous
+Status w.e.f. 2025-26)</b></p>
+    <p><b>SESSION : 2025 - 2026</b></p>
   </div>
-<br>
-  <div class="mid-logo"><img src="/DPGStudent-881238/MDU_LOGO.jpg"></div>
-<br>
+  <div class="mid-logo"><img src="/DPGStudent-881238/DPG_Universe.png"></div>
   <div class="center">
     <p><b>SEMESTER :</b> <span id="o_sem"></span></p>
   </div>
@@ -415,7 +412,8 @@ Status w.e.f. 2025-26). Under this new right DPG degree college had make some c
   </div>
 
   <div class="footer">
-    SUBMITTED ON <span id="o_date"></span>, MDU ROHTAK
+    SUBMITTED ON <span id="o_date"></span> , 
+    MDU ROHTAK / DPG Universe
   </div>
 </div>
 
@@ -443,7 +441,7 @@ dataForm.onsubmit=e=>{
 
   const v=i=>document.getElementById(i).value;
   const o=(i,val)=>document.getElementById(i).innerText=val;
-
+  
   o("o_subject",v("subject"));
   o("o_code",v("code"));
   o("o_course",v("course"));
@@ -468,4 +466,4 @@ function toggleWatermark(){
 </script>
 
 </body>
-</html>
+  </html>
