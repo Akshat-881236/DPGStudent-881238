@@ -6,26 +6,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DPG STM | Akshat Network Hub</title>
+<title>DPG School of Technology and Management Blog | Akshat Network Hub</title>
 
-<meta name="description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College.">
+<meta name="description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College. DPG School of Technology & Management (DPG STM) is a higher education institution located in Gurugram, Haryana. The institute offers undergraduate and postgraduate programs in Computer Applications, Management, Commerce, and related disciplines, and is affiliated with Maharshi Dayanand University (MDU), Rohtak. This website is an unofficial, student-created informational page developed for learning, academic support, and blogging purposes. It does not represent the official administration or authority of the institution. To learn more about this institute , Kindly refers to the Homepage of DPG STM.">
 <meta name="keywords" content="DPG Degree College, Dpg Stm, DPG - 881238, DPG STM - 881238, DPG by Akshat Network, DPG Student, DPG Student - 881238, DPG School of Technology and Management.">
 <meta name="author" content="Akshat Network Hub">
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://akshat-881236.github.io/DPGStudent-881238/">
-
+<link rel="icon" type="image/png" href="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png">
 <!-- ================= OPEN GRAPH ================= -->
-<meta property="og:title" content="DPG DEGREE COLLEGE | Akshat Network Hub">
-<meta property="og:description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College.">
+<meta property="og:title" content="DPG School of Technology and Management Blog | Akshat Network Hub">
+<meta property="og:description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College. DPG School of Technology & Management (DPG STM) is a higher education institution located in Gurugram, Haryana. The institute offers undergraduate and postgraduate programs in Computer Applications, Management, Commerce, and related disciplines, and is affiliated with Maharshi Dayanand University (MDU), Rohtak. This website is an unofficial, student-created informational page developed for learning, academic support, and blogging purposes. It does not represent the official administration or authority of the institution. To learn more about this institute , Kindly refers to the Homepage of DPG STM.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://akshat-881236.github.io/DPGStudent-881238/">
 <meta property="og:image" content="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png">
 
 <!-- ================= TWITTER ================= -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DPG STM | Akshat Network Hub">
-<meta name="twitter:description" content="DPG STM website for all Akshat Network Hub projects.">
+<meta name="twitter:title" content="DPG School of Technology and Management Blog | Akshat Network Hub">
+<meta name="twitter:description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College. DPG School of Technology & Management (DPG STM) is a higher education institution located in Gurugram, Haryana. The institute offers undergraduate and postgraduate programs in Computer Applications, Management, Commerce, and related disciplines, and is affiliated with Maharshi Dayanand University (MDU), Rohtak. This website is an unofficial, student-created informational page developed for learning, academic support, and blogging purposes. It does not represent the official administration or authority of the institution. To learn more about this institute , Kindly refers to the Homepage of DPG STM.">
 <meta name="twitter:image" content="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png">
 <meta name="theme-color" content="#0b4f6c">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +36,8 @@
 <meta property="og:locale" content="en_IN">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DPG STM Front Page">
-<meta name="twitter:description" content="Academic Front Page Generator">
+<meta name="twitter:title" content="DPG School of Technology and Management Blog | Akshat Network Hub">
+<meta name="twitter:description" content="A unofficial page of DPG DEGREE COLLEGE developed and hosted by me and I am Akshat Prasad ( identifier - 881238 ), a student of BCA in same College. DPG School of Technology & Management (DPG STM) is a higher education institution located in Gurugram, Haryana. The institute offers undergraduate and postgraduate programs in Computer Applications, Management, Commerce, and related disciplines, and is affiliated with Maharshi Dayanand University (MDU), Rohtak. This website is an unofficial, student-created informational page developed for learning, academic support, and blogging purposes. It does not represent the official administration or authority of the institution. To learn more about this institute , Kindly refers to the Homepage of DPG STM.">
 
 <meta name="author" content="Akshat Network Hub">
 <meta name="creator" content="Akshat Prasad">
@@ -57,7 +57,6 @@
 <meta property="og:description" content="Developer & Founder of Akshat Network Hub">
 <meta property="og:url" content="https://akshat-881236.github.io/">
 <meta property="og:image" content="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png">
-<meta pageId="ANH0002">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Akshat Prasad">
 <meta name="twitter:description" content="Founder of Akshat Network Hub">
@@ -200,15 +199,67 @@ header .title p{
   color:#94a3b8;
 }
 
+/* Complete Header Style Refactoring for Better Layout and Responsiveness in Mobile View */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  header img {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  header .title {
+    padding-left: 0;
+  }
+  header .title h1 {
+    font-size: 20px;
+  }
+  header .title p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 18px;
+  }
+  header img {
+    height: 100px;
+    margin-bottom: 0;
+  }
+  header .title {
+    padding-left: 30px;
+  }
+  header .title h1 {
+    font-size: 24px;
+  }
+  header .title p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  header .title h1 {
+    font-size: 18px;
+  }
+  header .title p {
+    font-size: 12px;
+  }
+}
+
 .menu-btn{
   margin-left:auto;
   font-size:22px;
   cursor:pointer;
 }
 
-/* ===== SIDEBAR ===== */
-#sidebar{
-  position:absolute;
+#sidebar {
+  position:fixed;
   top:0;
   left:-280px;
   width:260px;
@@ -218,7 +269,9 @@ header .title p{
   padding:80px 15px;
   transition:.35s;
   z-index:999;
+  overflow-y: auto;
 }
+
 #sidebar.active{ left:0; }
 
 #sidebar h3{
@@ -287,7 +340,7 @@ footer a:hover{ color:#38bdf8; }
 <script src="https://akshat-881236.github.io/TrackerJS/index.js"></script>
 <script src="https://akshat-881236.github.io/TrackerJS/akshat-add-nav.js"></script>
 </head>
-<body onload="alert('Welcome to DPG STM Blog - Akshat Network Hub')" onload="pushData()">
+<body onload="alert('Welcome to DPG STM Blog - Created by Akshat Prasad')" onload="pushData()">
 
 <!-- ================= HEADER ================= -->
 <header>
@@ -312,6 +365,7 @@ footer a:hover{ color:#38bdf8; }
   <a href="#contact">Contact & Credits</a>
 
   <h3>Other Pages</h3>
+  <a href="aboutme.htm">About Me</a>
   <a href="terms.htm">Terms of Use</a>
   <a href="usage-manual.htm">Usage Manual</a>
   <a href="https://akshat-881236.github.io/AkshatNetworkHub/">Akshat Network Hub</a>
@@ -471,12 +525,49 @@ document.addEventListener("touchend", e => {
   if(endX - startX > 80) sidebar.classList.add("active");
   if(startX - endX > 80) sidebar.classList.remove("active");
 });
-</script>
-<script>
-const url_Id = "ANH0002";
-</script>
 
-<script src="https://itsakshatnetworkhub-881238.github.io/ANH-Analysis/collector.js"></script>
-<script src="https://itsakshatnetworkhub-881238.github.io/ANH-Analysis/scripto.js"></script>
+/* Onload after 1 Minute and 30 Seconds Create a Stylish Card to show a Visit Card to Visit About Creater Page of Akshat Network Hub */
+setTimeout(() => {
+  const card = document.createElement("div");
+  card.style.position = "fixed";
+  card.style.bottom = "20px";
+  card.style.right = "20px";
+  card.style.background = "#020617";
+  card.style.border = "1px solid #1e293b";
+  card.style.padding = "15px";
+  card.style.borderRadius = "8px";
+  card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+  card.style.zIndex = "1001";
+  card.innerHTML = `
+    <h3 style="color:#38bdf8;margin:0;font-size:16px;">Visit Akshat Network Hub</h3>
+    <p style="color:#94a3b8;margin:5px 0;font-size:14px;">Explore more projects and blogs by Akshat Prasad.</p>
+    <a href="https://akshat-881236.github.io/AkshatNetworkHub/" style="display:inline-block;margin-top:10px;padding:8px 12px;background:#38bdf8;color:#020617;text-decoration:none;border-radius:4px;font-size:14px;">Visit Now</a>
+    <span style="position:absolute;top:5px;right:5px;cursor:pointer;color:#94a3b8;" onclick="this.parentElement.remove()">×</span>
+  `;
+  document.body.appendChild(card);
+}, 90000);
+
+/* If User cancel then again after 2 Minutes Show the Card Again but to aboutme.htm page */
+
+setTimeout(() => {
+  const card = document.createElement("div");
+  card.style.position = "fixed";
+  card.style.bottom = "20px";
+  card.style.right = "20px";
+  card.style.background = "#020617";
+  card.style.border = "1px solid #1e293b";
+  card.style.padding = "15px";
+  card.style.borderRadius = "8px";
+  card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+  card.style.zIndex = "1001";
+  card.innerHTML = `
+    <h3 style="color:#38bdf8;margin:0;font-size:16px;">Learn More About Akshat Prasad</h3>
+    <p style="color:#94a3b8;margin:5px 0;font-size:14px;">Discover the creator behind this page and his work.</p>
+    <a href="aboutme.htm" style="display:inline-block;margin-top:10px;padding:8px 12px;background:#38bdf8;color:#020617;text-decoration:none;border-radius:4px;font-size:14px;">About Me</a>
+    <span style="position:absolute;top:5px;right:5px;cursor:pointer;color:#94a3b8;" onclick="this.parentElement.remove()">×</span>
+  `;
+  document.body.appendChild(card);
+}, 210000);
+</script>
 </body>
 </html>

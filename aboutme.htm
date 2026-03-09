@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Akshat Prasad | Creater of DPG STM Blog and Other Student Tools</title>
+    <meta name="title" content="About Me - Akshat Prasad | Creater of DPG STM Blog and Other Student Tools">
+    <meta name="description" content="Learn about Akshat Prasad, the creator of the DPG STM Blog and various student tools. Discover his passion for helping students succeed in their academic journey and his dedication to providing valuable resources and insights.">
+    <meta name="keywords" content="Akshat Prasad, DPG STM Blog, student tools, academic resources, study techniques, time management, mental health, career advice, education, learning experience">
+    <meta name="author" content="Akshat Prasad">
+    <link rel="icon" href="https://akshat-881236.github.io/TrackerJS/Assets/AKNH/icon-192.png" type="image/png" sizes="192x192">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #590fd0;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f0edea;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        footer {
+            background-color: #e919b8;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            footer {
+                position: static;
+            }
+        }
+
+        /* Mobile Optimization of Navigation */
+        @media (max-width: 600px) {
+            .mobile {
+                display: block;
+                margin-top: 10px;
+            }
+
+            .Navbar {
+                display: none;
+            }
+                .Navbar.show {
+                    display: block;
+                }
+                .Navbar li {
+                    display: block;
+                    margin: 10px 0;
+                }
+
+                button {
+                    background-color: #333;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Creator of DPG STM Blog and Other Student Tools</h1>
+        <p>This blog is created by Akshat Prasad, a passionate student dedicated to providing valuable resources and insights to help fellow students succeed in their academic journey. <span id="mobile"><button onclick="expandNav()">Expand Navigation Bar</button></span></p>
+        <nav>
+            <ul class="Navbar">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="aboutme.htm">About Creator</a></li>
+                <li><a href="Assignment_Frontpage_DPG_STM_Akshat_Network_Hub.htm">Assignment Front Page Generator</a></li>
+                <li><a href="DPG_Practical_Frontpage_Generator.htm">Practical Front Page Generator</a></li>
+                <li><a href="https://akshat-881236.github.io/LearningClub-Key-of-Success-Learning-Point/" target="_blank">Learning Club</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h1>About Me - Akshat Prasad</h1>
+    <p>Hello! My name is Akshat Prasad, and I am the creator of the DPG STM Blog and various student tools. I am passionate about helping students succeed in their academic journey by providing resources, tips, and insights to make their learning experience more enjoyable and effective.</p>
+    <p>As a student myself, I understand the challenges and pressures that come with academic life. This is why I created this blog – to share my knowledge and experiences to help others navigate their educational journey more effectively. I am pursing BCA wef Session : 2024 - 2027 from DPG School of Technology & Management , Gurgaon, Haryana, India. I am currently in Year 2 and Semester - 4 in same College.</p> 
+    <p>Through my blog, I aim to provide valuable content that covers a wide range of topics, including study techniques, time management, mental health, and career advice. I believe that education is not just about acquiring knowledge but also about developing skills and mindset that will help students succeed in their future endeavors. I had also created my Project Hub popularly known as <a href="https://akshat-881236.github.io/AkshatNetworkHub/" target="_blank">Akshat Network Hub</a> and <a href="https://itsakshatnetworkhub.github.io/Akshat-881236/" target="_blank">Akshat Network Hub Announcement Site</a>where you can find more information about my projects and updates.</p>
+    <p>Through my blog, I share my experiences, study techniques, and advice on how to navigate the challenges of student life. I believe that with the right mindset and tools, every student can achieve their goals and thrive in their studies.</p>
+    <p>Thank you for visiting my blog, and I hope you find the content helpful and inspiring!</p>
+</main>
+    <footer>
+        <p>&copy; 2024 Akshat Prasad. All rights reserved.</p>
+    </footer>
+    <script>
+        function expandNav() {
+            var nav = document.querySelector('.Navbar');
+            if (nav.style.display === 'none') {
+                nav.style.display = 'block';
+            } else {
+                nav.style.display = 'none';
+            }
+        }
+
+            // Ensure the navigation bar is hidden on mobile by default
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.innerWidth <= 600) {
+                    document.querySelector('.Navbar').style.display = 'none';
+                }
+            });
+
+    </script>
+</body>
+</html>
