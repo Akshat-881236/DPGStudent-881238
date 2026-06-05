@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="DPG School of Technology & Management Physical Education Sample Paper Generator with PDF Export, Barcode Tracking and Question Randomization">
+<meta name="keywords" content="Physical Education Sample Paper, DPG College, BCA, Sample Paper Generator, PDF Generator">
+<meta name="author" content="DPG School of Technology & Management">
+<meta name="robots" content="index,follow">
+<title>Physical Education Sample Paper Generator | DPG STM</title>
+<meta property="og:title" content="Physical Education Sample Paper Generator">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Generate Physical Education Sample Papers instantly.">
+<meta property="og:image" content="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<meta property="og:url" content="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/PESamplePaper-1.html">
+<link rel="icon" href="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<link rel="canonical" href="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/PESamplePaper-1.html">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"Physical Education Sample Paper Generator",
+"applicationCategory":"EducationApplication",
+"operatingSystem":"All"
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" referrerpolicy="no-referrer"></script>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:#eef2ff;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.controls{
+background:white;
+padding:20px;
+margin:auto;
+max-width:1000px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.controls input,
+.controls button{
+padding:10px;
+margin:5px;
+}
+
+.controls button{
+cursor:pointer;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+.paper{
+width:850px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+position:relative;
+overflow:hidden;
+}
+
+.paper>*{
+position:relative;
+z-index:2;
+}
+
+.watermark{
+
+position:absolute;
+
+top:35%;
+left:0;
+
+width:100%;
+
+text-align:center;
+
+font-size:80px;
+
+font-weight:700;
+
+color:#000;
+
+opacity:.035;
+
+transform:rotate(-30deg);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.college-logo{
+width:100%;
+height:auto;
+margin-bottom:10px;
+}
+
+.paper-header{
+text-align:center;
+}
+
+.subject-meta{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-top:15px;
+
+font-size:14px;
+text-align:left;
+}
+
+hr{
+margin:15px 0;
+border:none;
+border-top:2px dashed #666;
+}
+
+.section-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.question{
+margin:8px 0;
+line-height:1.5;
+}
+
+.unit-title{
+font-size:16px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.barcode-row{
+display:flex;
+justify-content:center;
+margin:10px 0;
+}
+
+.barcode-row svg{
+width:220px;
+height:60px;
+}
+
+.footer-barcode{
+text-align:right;
+margin-top:30px;
+}
+
+.footer-barcode svg{
+width:380px;
+height:100px;
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+text-align:center;
+border-top:1px solid #ccc;
+padding-top:10px;
+}
+
+@media print{
+
+.controls{
+display:none;
+}
+
+body{
+background:white;
+}
+
+.paper{
+box-shadow:none;
+margin:0;
+width:100%;
+}
+
+}
+
+.center-qr{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px 0;
+}
+
+.center-qr canvas{
+
+display:block;
+
+width:120px !important;
+height:120px !important;
+
+background:#fff;
+
+border:1px solid #ddd;
+
+padding:4px;
+
+}
+
+.footer-qr{
+
+display:flex;
+
+justify-content:flex-start;
+
+margin-top:25px;
+
+}
+
+.footer-qr canvas{
+
+display:block;
+
+width:150px !important;
+height:150px !important;
+
+background:#fff;
+
+border:1px solid #ddd;
+
+padding:4px;
+
+}
+</style>
+<script src="https://akshat-881236.github.io/TrackerJS/redirect.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/tracker.js"></script>
+<script src="https://akshat-881236.github.io/AkshatNetworkHub/ActivityLog/router.js" defer></script>
+<script src="https://akshat-881236.github.io/TrackerJS/global-subscribe.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/TrackID/track_id_100.111.js"></script>
+</head>
+<body>
+
+<h1>📘 Physical Education Sample Paper Generator</h1>
+
+<div class="controls">
+
+<label>Number Of Papers</label>
+
+<input type="number" id="paperCount" min="1" max="5" value="1" title="Enter number of sample papers to generate (1-5)">
+
+<button onclick="generatePapers()">
+Generate PDF
+</button>
+
+</div>
+
+<div id="paperContainer"></div>
+
+<script>
+
+const SUBJECT_INFO={
+
+name:"Physical Education",
+code:"25PED403MI01",
+course:"All UG / PG",
+academicYear:"2025-2026",
+category:"MIC"
+
+};
+
+const SQ_DB = {
+1:[
+"Define Indus Valley Civilization.",
+"What is the Gurukul system?",
+"Mention any two physical activities of the Vedic period.",
+"What is an Akhara?",
+"Name one contribution of YMCA to Physical Education.",
+"What was the aim of Physical Education in ancient India?",
+"Name one British sport introduced in India.",
+"What is the Great Bath?",
+"Define Physical Education.",
+"Name one post-independence sports institution.",
+"What was the focus of PE during Hindu period?",
+"Define military training.",
+"Name one ancient Indian game.",
+"What is national integration?",
+"Define culture."
+],
+2:[
+"Define growth.",
+"Define development.",
+"Mention one factor affecting growth.",
+"What is adolescence?",
+"Define somatotype.",
+"Name any one body type.",
+"Define exercise.",
+"What is motor development?",
+"Mention one benefit of exercise.",
+"What is heredity?",
+"Define physical fitness.",
+"Name one gender difference in PE.",
+"Define nutrition.",
+"What is bone density?",
+"Define muscular strength."
+],
+3:[
+"Define learning.",
+"What is motor learning?",
+"Define learning curve.",
+"What is performance?",
+"Who gave Trial and Error theory?",
+"Define motivation.",
+"What is feedback?",
+"Name one law of learning.",
+"Define conditioning.",
+"What is insight learning?",
+"Define affective learning.",
+"Define cognitive learning.",
+"What is plateau?",
+"Define reinforcement.",
+"What is practice?"
+],
+4:[
+"Define society.",
+"What is leadership?",
+"Define social integration.",
+"What is gender equality?",
+"Name one social value of sports.",
+"Define cooperation.",
+"What is teamwork?",
+"Define national integration.",
+"What is women empowerment?",
+"Define discipline.",
+"Name one leadership quality.",
+"What is social harmony?",
+"Define culture.",
+"What is fair play?",
+"Define equality."
+]
+};
+
+// LONG QUESTIONS (7 each unit)
+const LQ_DB = {
+1:[
+"Explain Physical Education in Indus Valley Civilization.",
+"Explain Physical Education during the Vedic period.",
+"Explain Physical Education during the Hindu period.",
+"Explain the contribution of British period to Physical Education.",
+"Explain the Great Bath and its importance.",
+"Explain development of Physical Education after 1947.",
+"Explain the role of Akharas in Physical Education."
+],
+2:[
+"Explain growth and development in detail.",
+"Explain factors affecting growth and development.",
+"Explain age and gender differences in Physical Education.",
+"Explain somatotypes and their importance.",
+"Explain biological benefits of exercise.",
+"Explain muscular and skeletal adaptations due to exercise.",
+"Explain role of nutrition in growth."
+],
+3:[
+"Explain types of learning in Physical Education.",
+"Explain learning curve and its types.",
+"Explain relationship between learning and performance.",
+"Explain theories of learning.",
+"Explain laws and principles of learning.",
+"Explain role of motivation in learning.",
+"Explain importance of psychology in Physical Education."
+],
+4:[
+"Explain relationship between society and Physical Education.",
+"Explain leadership through sports.",
+"Explain social integration through physical activities.",
+"Explain Physical Education and gender equality.",
+"Explain role of PE in social development.",
+"Explain role of sports in national integration.",
+"Explain women empowerment through sports."
+]
+};
+
+function shuffle(arr){
+
+return [...arr]
+.sort(()=>0.5-Math.random());
+
+}
+
+function uid(){
+
+return crypto.randomUUID();
+
+}
+
+async function generatePapers(){
+
+const count =
+Number(
+document.getElementById("paperCount").value
+);
+
+const container =
+document.getElementById("paperContainer");
+
+container.innerHTML = "";
+
+const { jsPDF } = window.jspdf;
+
+const pdf = new jsPDF({
+orientation:"p",
+unit:"mm",
+format:"a4",
+compress:true
+});
+
+let lastDocId = "";
+let lastPaperCode = "";
+
+for(let p=1;p<=count;p++){
+
+const docId = uid();
+
+const paperCode =
+"PE-"+Math.floor(
+100000+Math.random()*900000
+);
+
+lastDocId = docId;
+lastPaperCode = paperCode;
+
+let sq = [];
+
+for(let u=1;u<=4;u++){
+
+sq.push(
+shuffle(SQ_DB[u])[0]
+);
+
+}
+
+const allSQ =
+[].concat(
+...Object.values(SQ_DB)
+);
+
+sq.push(
+...shuffle(allSQ).slice(0,3)
+);
+
+sq = sq.slice(0,7);
+
+const paper =
+document.createElement("div");
+
+paper.className = "paper";
+
+paper.innerHTML = `
+
+<div class="watermark">
+SAMPLE PAPER
+</div>
+
+<div class="paper-header">
+
+<img
+src="https://akshat-881236.github.io/DPGStudent-881238/DPGSTMLOGO.jpg"
+class="college-logo"
+crossorigin="anonymous">
+
+<h2>
+DPG School of Technology & Management
+</h2>
+
+<h3>
+Sample Question Paper
+</h3>
+
+<div class="subject-meta">
+
+<div>
+<b>Subject :</b>
+${SUBJECT_INFO.name}
+</div>
+
+<div>
+<b>Subject Code :</b>
+${SUBJECT_INFO.code}
+</div>
+
+<div>
+<b>Course :</b>
+${SUBJECT_INFO.course}
+</div>
+
+<div>
+<b>Academic Year :</b>
+${SUBJECT_INFO.academicYear}
+</div>
+
+<div>
+<b>Doc ID :</b>
+${docId}
+</div>
+
+<div>
+<b>Paper Code :</b>
+${paperCode}
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="section-title">
+Section A (7 × 1 = 7)
+</div>
+
+${sq.map((q,i)=>`
+<div class="question">
+${i+1}. ${q}
+</div>
+`).join("")}
+
+<hr>
+
+<div class="section-title">
+Section B (Long Questions)
+</div>
+
+${[1,2,3,4].map(unit=>{
+
+const q =
+shuffle(LQ_DB[unit])
+.slice(0,2);
+
+return `
+
+<div class="unit-title">
+Unit ${unit}
+</div>
+
+${q.map((x,i)=>`
+<div class="question">
+${i+1}. ${x}
+(7 Marks)
+</div>
+`).join("")}
+
+${
+unit===2
+?
+`
+<hr>
+`
+:
+`<hr>`
+}
+
+`;
+
+}).join("")}
+
+<div class="footer-qr">
+
+<canvas
+id="mainQR-${p}">
+</canvas>
+
+</div>
+
+<div class="footer">
+
+Generated By
+DPG Sample Paper Generator
+
+<br>
+
+Document ID :
+${docId}
+
+<br>
+
+Paper Code :
+${paperCode}
+
+<br>
+
+${new Date().toLocaleString()}
+
+</div>
+
+`;
+
+container.appendChild(paper);
+
+const images =
+paper.querySelectorAll("img");
+
+await Promise.all(
+
+[...images].map(img=>{
+
+if(img.complete)
+return Promise.resolve();
+
+return new Promise(resolve=>{
+
+img.onload = resolve;
+img.onerror = resolve;
+
+});
+
+})
+
+);
+
+
+await new Promise(
+resolve=>setTimeout(resolve,500)
+);
+
+const canvas =
+await html2canvas(
+paper,
+{
+scale:3,
+useCORS:true,
+allowTaint:false,
+logging:false,
+backgroundColor:"#ffffff",
+imageTimeout:0
+}
+);
+
+const img =
+canvas.toDataURL(
+"image/jpeg",
+0.92
+);
+
+if(p>1){
+pdf.addPage();
+}
+
+pdf.addImage(
+img,
+"JPEG",
+5,
+5,
+200,
+287,
+undefined,
+"FAST"
+);
+
+}
+
+pdf.setProperties({
+
+title:
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper`,
+
+subject:
+SUBJECT_INFO.name,
+
+author:
+"DPG School of Technology & Management",
+
+creator:
+"DPG Sample Paper Generator",
+
+keywords:
+`${SUBJECT_INFO.code},${SUBJECT_INFO.name},SamplePaper,DPG`,
+
+producer:
+"jsPDF"
+
+});
+
+pdf.setFontSize(1);
+
+pdf.text(
+
+JSON.stringify({
+
+subject:
+SUBJECT_INFO.name,
+
+subject_code:
+SUBJECT_INFO.code,
+
+course:
+SUBJECT_INFO.course,
+
+academic_year:
+SUBJECT_INFO.academicYear,
+
+doc_id:
+lastDocId,
+
+paper_code:
+lastPaperCode,
+
+generated:
+new Date().toISOString()
+
+}),
+
+1,
+1
+
+);
+
+pdf.save(
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper.pdf`
+);
+
+}
+
+</script>
+
+<script src="https://anh-dashboard-881238.web.app/loader.js"></script>
+
+</body>
+</html>
