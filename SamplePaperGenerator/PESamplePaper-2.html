@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="DPG School of Technology & Management Physical Education Sample Paper Generator with PDF Export, Barcode Tracking and Question Randomization">
+<meta name="keywords" content="Physical Education Sample Paper, DPG College, BCA, Sample Paper Generator, PDF Generator">
+<meta name="author" content="DPG School of Technology & Management">
+<meta name="robots" content="index,follow">
+<title>Physical Education Semester - 4 Sample Paper Generator | DPG STM</title>
+<meta property="og:title" content="Physical Education Sample Paper Generator">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Generate Physical Education Sample Papers instantly.">
+<meta property="og:image" content="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<meta property="og:url" content="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/PESamplePaper-2.html">
+<link rel="icon" href="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<link rel="canonical" href="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/PESamplePaper-2.html">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"Physical Education Sample Paper Generator",
+"applicationCategory":"EducationApplication",
+"operatingSystem":"All"
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" referrerpolicy="no-referrer"></script>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:#eef2ff;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.controls{
+background:white;
+padding:20px;
+margin:auto;
+max-width:1000px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.controls input,
+.controls button{
+padding:10px;
+margin:5px;
+}
+
+.controls button{
+cursor:pointer;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+.paper{
+width:850px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+position:relative;
+overflow:hidden;
+}
+
+.paper>*{
+position:relative;
+z-index:2;
+}
+
+.watermark{
+
+position:absolute;
+
+top:35%;
+left:0;
+
+width:100%;
+
+text-align:center;
+
+font-size:80px;
+
+font-weight:700;
+
+color:#000;
+
+opacity:.035;
+
+transform:rotate(-30deg);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.college-logo{
+width:100%;
+height:auto;
+margin-bottom:10px;
+}
+
+.paper-header{
+text-align:center;
+}
+
+.subject-meta{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-top:15px;
+
+font-size:14px;
+text-align:left;
+}
+
+hr{
+margin:15px 0;
+border:none;
+border-top:2px dashed #666;
+}
+
+.section-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.question{
+margin:8px 0;
+line-height:1.5;
+}
+
+.unit-title{
+font-size:16px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.barcode-row{
+display:flex;
+justify-content:center;
+margin:10px 0;
+}
+
+.barcode-row svg{
+width:220px;
+height:60px;
+}
+
+.footer-barcode{
+text-align:right;
+margin-top:30px;
+}
+
+.footer-barcode svg{
+width:380px;
+height:100px;
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+text-align:center;
+border-top:1px solid #ccc;
+padding-top:10px;
+}
+
+@media print{
+
+.controls{
+display:none;
+}
+
+body{
+background:white;
+}
+
+.paper{
+box-shadow:none;
+margin:0;
+width:100%;
+}
+
+}
+
+.center-qr{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px 0;
+}
+
+.center-qr canvas{
+
+display:block;
+
+width:120px !important;
+height:120px !important;
+
+background:#fff;
+
+border:1px solid #ddd;
+
+padding:4px;
+
+}
+
+.footer-qr{
+
+display:flex;
+
+justify-content:flex-start;
+
+margin-top:25px;
+
+}
+
+.footer-qr canvas{
+
+display:block;
+
+width:150px !important;
+height:150px !important;
+
+background:#fff;
+
+border:1px solid #ddd;
+
+padding:4px;
+
+}
+</style>
+<script src="https://akshat-881236.github.io/TrackerJS/redirect.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/tracker.js"></script>
+<script src="https://akshat-881236.github.io/AkshatNetworkHub/ActivityLog/router.js" defer></script>
+<script src="https://akshat-881236.github.io/TrackerJS/global-subscribe.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/TrackID/track_id_100.111.js"></script>
+</head>
+<body>
+
+<h1>📘 Physical Education Sample Paper Generator</h1>
+
+<div class="controls">
+
+<label>Number Of Papers</label>
+
+<input type="number" id="paperCount" min="1" max="5" value="1" title="Enter number of sample papers to generate (1-5)">
+
+<button onclick="generatePapers()">
+Generate PDF
+</button>
+
+</div>
+
+<div id="paperContainer"></div>
+
+<script>
+
+const SUBJECT_INFO={
+
+name:"Health Education, First Aid & Safety Measures",
+code:"25PED401MV01",
+course:"All UG / PG",
+academicYear:"2025-2026",
+category:"MIC"
+
+};
+
+// ===============================
+// SEMESTER - 4
+// Health Education, First Aid and Safety Measures
+// ===============================
+
+// COMPULSORY SHORT QUESTIONS (15 per Unit)
+// Includes Direct, Conceptual, HOTS, Application & Creative Questions
+
+const SQ_DB = {
+
+1:[
+
+"Define Health Education.",
+
+"What are the main objectives of Health Education?",
+
+"Why is Health Education important in daily life?",
+
+"Differentiate between health and wellness.",
+
+"What is a healthy lifestyle?",
+
+"Mention any two dimensions of health.",
+
+"What role does a school play in promoting health awareness?",
+
+"How can physical education teachers promote health among students?",
+
+"What is community health?",
+
+"Why is personal hygiene important?",
+
+"Suggest one Health Education activity for a village community.",
+
+"How can social media contribute to Health Education?",
+
+"What would happen if Health Education is ignored in schools?",
+
+"State one responsibility of a health-conscious citizen.",
+
+"How can Health Education reduce healthcare costs in society?"
+
+],
+
+2:[
+
+"Define First Aid.",
+
+"What are the objectives of First Aid?",
+
+"Who is called a first aider?",
+
+"Mention any two qualities of a good first aider.",
+
+"What should be the first action during an emergency?",
+
+"What is shock?",
+
+"Define fracture.",
+
+"What is a sprain?",
+
+"How can excessive bleeding be controlled?",
+
+"What is choking?",
+
+"What is unconsciousness?",
+
+"List any two items found in a First Aid kit.",
+
+"Why should burns be cooled immediately?",
+
+"If a player collapses during a match, what would be your first response?",
+
+"How can timely First Aid save lives?"
+
+],
+
+3:[
+
+"Define Safety Education.",
+
+"Why is Safety Education necessary?",
+
+"What is home safety?",
+
+"Mention one playground safety rule.",
+
+"What precautions should be taken before participating in sports?",
+
+"What is fire safety?",
+
+"State one road safety rule for pedestrians.",
+
+"What is water safety?",
+
+"What are safety signs?",
+
+"Differentiate between warning and prohibition signs.",
+
+"Why are helmets important?",
+
+"What should you do if you notice an electrical hazard at home?",
+
+"How can safety education reduce accidents in schools?",
+
+"What role do safety symbols play during emergencies?",
+
+"Suggest one innovative idea to improve safety awareness among children."
+
+],
+
+4:[
+
+"Define disaster management.",
+
+"What is a natural disaster?",
+
+"What is a man-made disaster?",
+
+"Mention any two examples of natural disasters.",
+
+"What is disaster preparedness?",
+
+"What is disaster response?",
+
+"What is disaster recovery?",
+
+"What is emergency evacuation?",
+
+"Why are mock drills conducted?",
+
+"State two emergency communication do's.",
+
+"State one emergency communication don't.",
+
+"What should be included in an emergency kit?",
+
+"How should a school prepare for earthquake emergencies?",
+
+"What lessons can communities learn after a disaster?",
+
+"How can technology help during disaster management?"
+
+]
+
+};
+
+
+// LONG QUESTIONS
+// Direct + Analytical + HOTS + Case Study + Application Based
+
+const LQ_DB = {
+
+1:[
+
+"Explain the meaning, definition, objectives and scope of Health Education. Discuss its role in promoting a healthy lifestyle.",
+
+"Describe the importance of Health Education in schools and communities with suitable examples.",
+
+"Explain the role of Physical Education teachers in promoting health awareness and healthy habits among students.",
+
+"Discuss various dimensions of health and explain how Health Education contributes to overall well-being.",
+
+"Analyze the impact of poor health awareness on society. How can Health Education help overcome these challenges?",
+
+"As a school health coordinator, design a comprehensive Health Education programme for students and justify its importance.",
+
+"Critically examine how Health Education can contribute to national development and quality of life."
+
+],
+
+2:[
+
+"Explain the meaning, objectives, principles and importance of First Aid in emergency situations.",
+
+"Discuss the qualities and responsibilities of a good first aider with practical examples.",
+
+"Explain the First Aid treatment for wounds, fractures, burns, sprains, bleeding, shock, choking and unconsciousness.",
+
+"Describe the contents of a well-equipped First Aid kit and explain the use of each item.",
+
+"A student suffers a fracture during a sports competition. Explain the step-by-step First Aid procedure you would follow.",
+
+"Compare the First Aid management of burns, bleeding and choking. Why is quick response essential?",
+
+"Evaluate the role of First Aid training in reducing mortality and improving community safety."
+
+],
+
+3:[
+
+"Explain the meaning, need and importance of Safety Education in daily life.",
+
+"Discuss safety measures to be followed at home, school, playground and during sports activities.",
+
+"Explain fire safety, road safety and water safety guidelines in detail.",
+
+"Describe different types of safety signs and symbols and explain their significance.",
+
+"A school experiences frequent accidents on the playground. Analyze the causes and suggest a detailed Safety Education plan.",
+
+"How can Safety Education create a culture of prevention rather than reaction? Discuss with examples.",
+
+"Design a comprehensive safety awareness campaign for students and explain its expected outcomes."
+
+],
+
+4:[
+
+"Explain the concept, principles and stages of Disaster Management: preparedness, response and recovery.",
+
+"Differentiate between natural and man-made disasters. Discuss their causes, impacts and preventive measures.",
+
+"Explain emergency evacuation procedures and the importance of disaster drills in schools and communities.",
+
+"Discuss the do's and don'ts of communication during emergencies and disasters.",
+
+"A severe flood affects your locality. Explain how disaster management authorities and citizens should respond at different stages.",
+
+"Critically evaluate the importance of disaster preparedness in minimizing loss of life and property.",
+
+"Prepare a disaster management plan for an educational institution, including evacuation, communication and recovery strategies."
+
+]
+
+};
+
+function shuffle(arr){
+
+return [...arr]
+.sort(()=>0.5-Math.random());
+
+}
+
+function uid(){
+
+return crypto.randomUUID();
+
+}
+
+async function generatePapers(){
+
+const count =
+Number(
+document.getElementById("paperCount").value
+);
+
+const container =
+document.getElementById("paperContainer");
+
+container.innerHTML = "";
+
+const { jsPDF } = window.jspdf;
+
+const pdf = new jsPDF({
+orientation:"p",
+unit:"mm",
+format:"a4",
+compress:true
+});
+
+let lastDocId = "";
+let lastPaperCode = "";
+
+for(let p=1;p<=count;p++){
+
+const docId = uid();
+
+const paperCode =
+"PE-"+Math.floor(
+100000+Math.random()*900000
+);
+
+lastDocId = docId;
+lastPaperCode = paperCode;
+
+let sq = [];
+
+for(let u=1;u<=4;u++){
+
+sq.push(
+shuffle(SQ_DB[u])[0]
+);
+
+}
+
+const allSQ =
+[].concat(
+...Object.values(SQ_DB)
+);
+
+sq.push(
+...shuffle(allSQ).slice(0,3)
+);
+
+sq = sq.slice(0,7);
+
+const paper =
+document.createElement("div");
+
+paper.className = "paper";
+
+paper.innerHTML = `
+
+<div class="watermark">
+SAMPLE PAPER
+</div>
+
+<div class="paper-header">
+
+<img
+src="https://akshat-881236.github.io/DPGStudent-881238/DPGSTMLOGO.jpg"
+class="college-logo"
+crossorigin="anonymous">
+
+<h2>
+DPG School of Technology & Management
+</h2>
+
+<h3>
+Sample Question Paper
+</h3>
+
+<div class="subject-meta">
+
+<div>
+<b>Subject :</b>
+${SUBJECT_INFO.name}
+</div>
+
+<div>
+<b>Subject Code :</b>
+${SUBJECT_INFO.code}
+</div>
+
+<div>
+<b>Course :</b>
+${SUBJECT_INFO.course}
+</div>
+
+<div>
+<b>Academic Year :</b>
+${SUBJECT_INFO.academicYear}
+</div>
+
+<div>
+<b>Doc ID :</b>
+${docId}
+</div>
+
+<div>
+<b>Paper Code :</b>
+${paperCode}
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="section-title">
+Section A (7 × 1 = 7)
+</div>
+
+${sq.map((q,i)=>`
+<div class="question">
+${i+1}. ${q}
+</div>
+`).join("")}
+
+<hr>
+
+<div class="section-title">
+Section B (Long Questions)
+</div>
+
+${[1,2,3,4].map(unit=>{
+
+const q =
+shuffle(LQ_DB[unit])
+.slice(0,2);
+
+return `
+
+<div class="unit-title">
+Unit ${unit}
+</div>
+
+${q.map((x,i)=>`
+<div class="question">
+${i+1}. ${x}
+(7 Marks)
+</div>
+`).join("")}
+
+${
+unit===2
+?
+`
+<hr>
+`
+:
+`<hr>`
+}
+
+`;
+
+}).join("")}
+
+<div class="footer-qr">
+
+<canvas
+id="mainQR-${p}">
+</canvas>
+
+</div>
+
+<div class="footer">
+
+Generated By
+DPG Sample Paper Generator
+
+<br>
+
+Document ID :
+${docId}
+
+<br>
+
+Paper Code :
+${paperCode}
+
+<br>
+
+${new Date().toLocaleString()}
+
+</div>
+
+`;
+
+container.appendChild(paper);
+
+const images =
+paper.querySelectorAll("img");
+
+await Promise.all(
+
+[...images].map(img=>{
+
+if(img.complete)
+return Promise.resolve();
+
+return new Promise(resolve=>{
+
+img.onload = resolve;
+img.onerror = resolve;
+
+});
+
+})
+
+);
+
+
+await new Promise(
+resolve=>setTimeout(resolve,500)
+);
+
+const canvas =
+await html2canvas(
+paper,
+{
+scale:3,
+useCORS:true,
+allowTaint:false,
+logging:false,
+backgroundColor:"#ffffff",
+imageTimeout:0
+}
+);
+
+const img =
+canvas.toDataURL(
+"image/jpeg",
+0.92
+);
+
+if(p>1){
+pdf.addPage();
+}
+
+pdf.addImage(
+img,
+"JPEG",
+5,
+5,
+200,
+287,
+undefined,
+"FAST"
+);
+
+}
+
+pdf.setProperties({
+
+title:
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper`,
+
+subject:
+SUBJECT_INFO.name,
+
+author:
+"DPG School of Technology & Management",
+
+creator:
+"DPG Sample Paper Generator",
+
+keywords:
+`${SUBJECT_INFO.code},${SUBJECT_INFO.name},SamplePaper,DPG`,
+
+producer:
+"jsPDF"
+
+});
+
+pdf.setFontSize(1);
+
+pdf.text(
+
+JSON.stringify({
+
+subject:
+SUBJECT_INFO.name,
+
+subject_code:
+SUBJECT_INFO.code,
+
+course:
+SUBJECT_INFO.course,
+
+academic_year:
+SUBJECT_INFO.academicYear,
+
+doc_id:
+lastDocId,
+
+paper_code:
+lastPaperCode,
+
+generated:
+new Date().toISOString()
+
+}),
+
+1,
+1
+
+);
+
+pdf.save(
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper.pdf`
+);
+
+}
+
+</script>
+
+<script src="https://anh-dashboard-881238.web.app/loader.js"></script>
+
+</body>
+</html>
