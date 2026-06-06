@@ -474,7 +474,7 @@ sq.push(
 ...shuffle(allSQ).slice(0,3)
 );
 
-sq = sq.slice(0,7);
+sq = sq.slice(0,5);
 
 const paper =
 document.createElement("div");
@@ -541,7 +541,7 @@ ${paperCode}
 <hr>
 
 <div class="section-title">
-Section A (7 × 1 = 7)
+Section A (5 × 2 = 10)
 </div>
 
 ${sq.map((q,i)=>`
@@ -571,7 +571,7 @@ Unit ${unit}
 ${q.map((x,i)=>`
 <div class="question">
 ${i+1}. ${x}
-(7 Marks)
+(10 Marks)
 </div>
 `).join("")}
 
