@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="DPG School of Technology & Management Computer Graphics Sample Paper Generator with PDF Export and Question Randomization">
+<meta name="keywords" content="Physical Education Sample Paper, DPG College, BCA, Sample Paper Generator, PDF Generator">
+<meta name="author" content="DPG School of Technology & Management">
+<meta name="robots" content="index,follow">
+<title>Computer Graphics Semester - 4 Sample Paper Generator | DPG STM</title>
+<meta property="og:title" content="Computer Graphics Sample Paper Generator">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Generate Computer Graphics Sample Papers instantly.">
+<meta property="og:image" content="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<meta property="og:url" content="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/CGSem-4Session-2526SamplePaper-1.html">
+<link rel="icon" href="https://akshat-881236.github.io/DPGStudent-881238/dpganh.png">
+<link rel="canonical" href="https://akshat-881236.github.io/DPGStudent-881238/SamplePaperGenerator/CGSem-4Session-2526SamplePaper-1.html">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"Computer Graphics Sample Paper Generator",
+"applicationCategory":"EducationApplication",
+"operatingSystem":"All"
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" referrerpolicy="no-referrer"></script>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:#eef2ff;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.controls{
+background:white;
+padding:20px;
+margin:auto;
+max-width:1000px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.controls input,
+.controls button{
+padding:10px;
+margin:5px;
+}
+
+.controls button{
+cursor:pointer;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+.paper{
+width:850px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+position:relative;
+overflow:hidden;
+}
+
+.paper>*{
+position:relative;
+z-index:2;
+}
+
+.watermark{
+
+position:absolute;
+
+top:35%;
+left:0;
+
+width:100%;
+
+text-align:center;
+
+font-size:80px;
+
+font-weight:700;
+
+color:#000;
+
+opacity:.035;
+
+transform:rotate(-30deg);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.college-logo{
+width:100%;
+height:auto;
+margin-bottom:10px;
+}
+
+.paper-header{
+text-align:center;
+}
+
+.subject-meta{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-top:15px;
+
+font-size:14px;
+text-align:left;
+}
+
+hr{
+margin:15px 0;
+border:none;
+border-top:2px dashed #666;
+}
+
+.section-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.question{
+margin:8px 0;
+line-height:1.5;
+}
+
+.unit-title{
+font-size:16px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+text-align:center;
+border-top:1px solid #ccc;
+padding-top:10px;
+}
+
+@media print{
+
+.controls{
+display:none;
+}
+
+body{
+background:white;
+}
+
+.paper{
+box-shadow:none;
+margin:0;
+width:100%;
+}
+}
+</style>
+<script src="https://akshat-881236.github.io/TrackerJS/redirect.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/tracker.js"></script>
+<script src="https://akshat-881236.github.io/AkshatNetworkHub/ActivityLog/router.js" defer></script>
+<script src="https://akshat-881236.github.io/TrackerJS/global-subscribe.js"></script>
+<script src="https://akshat-881236.github.io/TrackerJS/TrackID/track_id_100.111.js"></script>
+</head>
+<body>
+
+<h1>📘 Computer Graphics Sample Paper Generator</h1>
+
+<div class="controls">
+
+<label>Number Of Papers</label>
+
+<input type="number" id="paperCount" min="1" max="5" value="1" title="Enter number of sample papers to generate (1-5)">
+
+<button onclick="generatePapers()">
+Generate PDF
+</button>
+
+</div>
+
+<div id="paperContainer"></div>
+
+<script>
+
+const SUBJECT_INFO={
+
+name:"Computer Graphics",
+code:"24BCA404DS04",
+course:"BCA",
+academicYear:"2025-2026",
+category:"DSC"
+
+};
+
+const SQ_DB = {
+1:[
+"Define Computer Graphics.",
+"What is raster graphics?",
+"What is vector graphics?",
+"Name two applications of Computer Graphics.",
+"What is a graphics pipeline?",
+"Define rendering.",
+"What is a vertex?",
+"Find the total pixels in an image of size 800 × 600.",
+"If a frame rate is 30 FPS, how many frames are displayed in 2 seconds?",
+"Define graphics primitives.",
+"What is a point primitive?",
+"What is a line primitive?",
+"What is a polygon?",
+"Define Cartesian coordinate system.",
+"What is a homogeneous coordinate system?",
+"What is a transformation matrix?",
+"Find the distance between points (0,0) and (3,4).",
+"Find the midpoint of line joining (2,2) and (6,6)."
+],
+2:[
+"What is a pixel?",
+"Define RGB color model.",
+"What is CMYK color model?",
+"What is HSL color model?",
+"What is interpolation?",
+"Define DDA algorithm.",
+"Define Bresenham line algorithm.",
+"Using DDA algorithm, find the first two points for line from (0,0) to (4,4).",
+"How many pixels are drawn for a horizontal line from (2,5) to (8,5)?",
+"Define translation.",
+"What is rotation?",
+"What is scaling?",
+"What is reflection?",
+"What is composite transformation?",
+"Why are homogeneous coordinates used?",
+"Define transformation matrix.",
+"Translate point (2,3) by Tx=4 and Ty=5.",
+"Scale point (3,4) by factors Sx=2 and Sy=2.",
+"What is a window?",
+"What is a viewport?",
+"What is a clipping window?",
+"What are region codes?",
+"Define windowing.",
+"What is viewport transformation?",
+"What is clipping?",
+"A window size is 200 × 100. Find its area.",
+"A viewport size is 400 × 300. Calculate total display pixels."
+],
+3:[
+"Define clipping.",
+"What is point clipping?",
+"What is line clipping?",
+"Define Cohen-Sutherland algorithm.",
+"What is Midpoint Subdivision method?",
+"What is polygon clipping?",
+"Define Sutherland-Hodgman algorithm.",
+"Determine whether point (5,5) lies inside window (0,0)-(10,10).",
+"Check whether point (15,5) is outside clipping window (0,0)-(10,10).",
+"What is 3D transformation?",
+"Define 3D translation.",
+"What is 3D rotation?",
+"What is 3D scaling?",
+"What are homogeneous coordinates?",
+"What is transformation composition?",
+"Why are 3D transformations required?",
+"Translate point (1,2,3) by (2,3,4).",
+"Scale point (2,2,2) by factor 3 in all directions.",
+"Define projection.",
+"What is orthographic projection?",
+"What is perspective projection?",
+"What is a vanishing point?",
+"What is a projection plane?",
+"State one use of orthographic projection.",
+"State one use of perspective projection.",
+"Project point (5,4,3) orthographically on XY plane.",
+"How many vanishing points are present in one-point perspective projection?"
+],
+4:[
+"Define illumination.",
+"What is Phong reflection model?",
+"What is ambient reflection?",
+"What is diffuse reflection?",
+"What is specular reflection?",
+"Define Gouraud shading.",
+"Define Phong shading.",
+"If ambient intensity is 0.3 and object coefficient is 0.5, find ambient reflection component.",
+"Calculate diffuse component when Kd=0.5 and light intensity=0.8.",
+"What is hidden surface removal?",
+"Define Z-buffer algorithm.",
+"What is depth buffering?",
+"What is Scan Line algorithm?",
+"Why is hidden surface removal required?",
+"What is visibility determination?",
+"Define depth value.",
+"If Z-buffer stores depths 5 and 8, which surface is visible?",
+"A scene contains 100 polygons. If 40 are hidden, how many remain visible?",
+"What is texture mapping?",
+"What are texture coordinates?",
+"Define texture filtering.",
+"What is mipmapping?",
+"What is bilinear filtering?",
+"What is texture wrapping?",
+"State one application of texture mapping.",
+"A texture image is 256 × 256. Calculate total texels.",
+"If mipmap level reduces size from 512 × 512 to half, find next level size."
+]
+};
+const LQ_DB = {
+1:[
+"Explain Computer Graphics and its applications in detail.",
+"Describe the historical development of Computer Graphics.",
+"Explain the graphics pipeline and rendering process.",
+"Discuss the stages of graphics pipeline with suitable examples.",
+"An image has resolution 1024 × 768. Calculate the total number of pixels and explain its significance.",
+"A graphics system renders 60 frames per second. Calculate the number of frames rendered in 5 seconds and discuss performance.",
+"Explain graphics primitives and their importance.",
+"Discuss Cartesian and Homogeneous coordinate systems in detail.",
+"Explain transformation matrices and their applications.",
+"Describe points, lines and polygons with suitable examples.",
+"Calculate the distance between points A(2,3) and B(8,11) using distance formula.",
+"Find the midpoint and slope of a line joining points (1,2) and (7,8)."
+],
+2:[
+"Explain DDA line drawing algorithm with example.",
+"Explain Bresenham's line drawing algorithm with example.",
+"Discuss Midpoint Circle Drawing Algorithm in detail.",
+"Explain color models RGB, CMYK and HSL.",
+"Apply DDA algorithm to draw a line from (2,2) to (8,5).",
+"Apply Bresenham line drawing algorithm for line from (0,0) to (6,4).",
+"Explain 2D Translation, Rotation and Scaling with matrices.",
+"Discuss reflection and its types with examples.",
+"Explain composite transformations in detail.",
+"Solve numerical problems based on 2D transformations.",
+"Perform translation of triangle A(1,1), B(2,1), C(1,2) by (4,3).",
+"Rotate point (2,0) by 90 degrees about origin.",
+"Explain windowing and viewport concepts.",
+"Discuss clipping window and viewport transformation.",
+"Explain region codes and their significance.",
+"Describe the complete windowing process with diagram.",
+"Map point (25,25) from window (0,0)-(50,50) to viewport (0,0)-(100,100).",
+"Calculate viewport coordinates for a point using window-to-viewport transformation."
+],
+3:[
+"Explain Cohen-Sutherland line clipping algorithm with example.",
+"Discuss Midpoint Subdivision clipping algorithm.",
+"Explain point, line and polygon clipping techniques.",
+"Describe Sutherland-Hodgman polygon clipping algorithm.",
+"Apply Cohen-Sutherland clipping algorithm on line joining (2,2) and (12,8).",
+"Clip a polygon against rectangular window using Sutherland-Hodgman method.",
+"Explain 3D Translation, Rotation and Scaling with matrices.",
+"Discuss homogeneous coordinates in 3D graphics.",
+"Explain composite 3D transformations with examples.",
+"Solve numerical problems based on 3D transformations.",
+"Perform 3D translation of point (2,3,4) by vector (5,2,1).",
+"Apply scaling transformation on cube vertices using scale factor 2.",
+"Explain Orthographic Projection in detail.",
+"Explain Perspective Projection and Vanishing Points.",
+"Differentiate Orthographic and Perspective Projection.",
+"Discuss projection techniques with suitable diagrams.",
+"Find orthographic projection of points A(2,3,4) and B(5,6,7) on XY plane.",
+"Demonstrate perspective projection of a point using suitable calculations."
+],
+4:[
+"Explain Phong Reflection Model in detail.",
+"Differentiate Gouraud and Phong Shading techniques.",
+"Explain illumination models used in Computer Graphics.",
+"Discuss ambient, diffuse and specular reflections.",
+"Using Phong reflection model, calculate ambient reflection for given values.",
+"Compute diffuse reflection component using suitable numerical example.",
+"Explain Z-Buffer Algorithm with suitable example.",
+"Discuss Scan Line Algorithm for hidden surface removal.",
+"Compare different hidden surface removal techniques.",
+"Explain visibility determination in Computer Graphics.",
+"Demonstrate Z-buffer algorithm using depth values 3, 6 and 9.",
+"Apply hidden surface removal on a simple scene and identify visible surfaces.",
+"Explain texture mapping and texture coordinates.",
+"Discuss texture filtering techniques in detail.",
+"Explain mipmapping with advantages and limitations.",
+"Describe image rendering and texture mapping process.",
+"Calculate texture coordinates for a rectangular surface using suitable example.",
+"Given a texture size of 1024 × 1024, determine mipmap dimensions for first three levels."
+]
+};
+
+function shuffle(arr){
+
+return [...arr]
+.sort(()=>0.5-Math.random());
+
+}
+
+function uid(){
+
+return crypto.randomUUID();
+
+}
+
+async function generatePapers(){
+
+const count =
+Number(
+document.getElementById("paperCount").value
+);
+
+const container =
+document.getElementById("paperContainer");
+
+container.innerHTML = "";
+
+const { jsPDF } = window.jspdf;
+
+const pdf = new jsPDF({
+orientation:"p",
+unit:"mm",
+format:"a4",
+compress:true
+});
+
+let lastDocId = "";
+let lastPaperCode = "";
+
+for(let p=1;p<=count;p++){
+
+const docId = uid();
+
+const paperCode =
+"PE-"+Math.floor(
+100000+Math.random()*900000
+);
+
+lastDocId = docId;
+lastPaperCode = paperCode;
+
+let sq = [];
+
+for(let u=1;u<=4;u++){
+
+sq.push(
+shuffle(SQ_DB[u])[0]
+);
+
+}
+
+const allSQ =
+[].concat(
+...Object.values(SQ_DB)
+);
+
+sq.push(
+...shuffle(allSQ).slice(0,3)
+);
+
+sq = sq.slice(0,7);
+
+const paper =
+document.createElement("div");
+
+paper.className = "paper";
+
+paper.innerHTML = `
+
+<div class="watermark">
+SAMPLE PAPER
+</div>
+
+<div class="paper-header">
+
+<img
+src="https://akshat-881236.github.io/DPGStudent-881238/DPGSTMLOGO.jpg"
+class="college-logo"
+crossorigin="anonymous">
+
+<h2>
+DPG School of Technology & Management
+</h2>
+
+<h3>
+Sample Question Paper
+</h3>
+
+<div class="subject-meta">
+
+<div>
+<b>Subject :</b>
+${SUBJECT_INFO.name}
+</div>
+
+<div>
+<b>Subject Code :</b>
+${SUBJECT_INFO.code}
+</div>
+
+<div>
+<b>Course :</b>
+${SUBJECT_INFO.course}
+</div>
+
+<div>
+<b>Academic Year :</b>
+${SUBJECT_INFO.academicYear}
+</div>
+
+<div>
+<b>Doc ID :</b>
+${docId}
+</div>
+
+<div>
+<b>Paper Code :</b>
+${paperCode}
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="section-title">
+Section A (7 × 1 = 7)
+</div>
+
+${sq.map((q,i)=>`
+<div class="question">
+${i+1}. ${q}
+</div>
+`).join("")}
+
+<hr>
+
+<div class="section-title">
+Section B (Long Questions)
+</div>
+
+${[1,2,3,4].map(unit=>{
+
+const q =
+shuffle(LQ_DB[unit])
+.slice(0,2);
+
+return `
+
+<div class="unit-title">
+Unit ${unit}
+</div>
+
+${q.map((x,i)=>`
+<div class="question">
+${i+1}. ${x}
+(7 Marks)
+</div>
+`).join("")}
+
+${
+unit===2
+?
+`
+<hr>
+`
+:
+`<hr>`
+}
+
+`;
+
+}).join("")}
+
+<div class="footer">
+
+Generated By
+DPG Sample Paper Generator
+
+<br>
+
+Document ID :
+${docId}
+
+<br>
+
+Paper Code :
+${paperCode}
+
+<br>
+
+${new Date().toLocaleString()}
+
+</div>
+
+`;
+
+container.appendChild(paper);
+
+const images =
+paper.querySelectorAll("img");
+
+await Promise.all(
+
+[...images].map(img=>{
+
+if(img.complete)
+return Promise.resolve();
+
+return new Promise(resolve=>{
+
+img.onload = resolve;
+img.onerror = resolve;
+
+});
+
+})
+
+);
+
+
+await new Promise(
+resolve=>setTimeout(resolve,500)
+);
+
+const canvas =
+await html2canvas(
+paper,
+{
+scale:3,
+useCORS:true,
+allowTaint:false,
+logging:false,
+backgroundColor:"#ffffff",
+imageTimeout:0
+}
+);
+
+const img =
+canvas.toDataURL(
+"image/jpeg",
+0.92
+);
+
+if(p>1){
+pdf.addPage();
+}
+
+pdf.addImage(
+img,
+"JPEG",
+5,
+5,
+200,
+287,
+undefined,
+"FAST"
+);
+
+}
+
+pdf.setProperties({
+
+title:
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper`,
+
+subject:
+SUBJECT_INFO.name,
+
+author:
+"DPG School of Technology & Management",
+
+creator:
+"DPG Sample Paper Generator",
+
+keywords:
+`${SUBJECT_INFO.code},${SUBJECT_INFO.name},SamplePaper,DPG`,
+
+producer:
+"jsPDF"
+
+});
+
+pdf.setFontSize(1);
+
+pdf.text(
+
+JSON.stringify({
+
+subject:
+SUBJECT_INFO.name,
+
+subject_code:
+SUBJECT_INFO.code,
+
+course:
+SUBJECT_INFO.course,
+
+academic_year:
+SUBJECT_INFO.academicYear,
+
+doc_id:
+lastDocId,
+
+paper_code:
+lastPaperCode,
+
+generated:
+new Date().toISOString()
+
+}),
+
+1,
+1
+
+);
+
+pdf.save(
+`${SUBJECT_INFO.name}-${SUBJECT_INFO.code}-SamplePaper.pdf`
+);
+
+}
+
+</script>
+
+<script src="https://anh-dashboard-881238.web.app/loader.js"></script>
+
+</body>
+</html>
